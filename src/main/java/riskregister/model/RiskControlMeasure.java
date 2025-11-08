@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RiskControlMeasure implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String controlExecutionRiskImpact = "";
+    private String controlExecutionRiskImpact = "";q
     private String levelsOfControlExecutionRiskImpact = "";
     private String monitoringPeriodicityRiskImpact = "";
     private String natureOfControlsRiskImpact = "";

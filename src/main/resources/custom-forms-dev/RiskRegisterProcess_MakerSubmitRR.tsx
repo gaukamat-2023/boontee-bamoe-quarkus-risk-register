@@ -14,11 +14,8 @@ import {
 	InputGroup,
 	TimePicker,	
 	Tabs,
-	Tab,
-	TabTitleText,
-	Select,
-	SelectOption,
-	SelectVariant,
+ 	Tab,
+ 	TabTitleText,
 	Table,
 	Thead,
 	Tbody,
@@ -392,14 +389,10 @@ const Form__RiskRegisterProcess_MakerSubmitRR: React.FC<any> = (props: any) => {
 		return `${hours}:${minutes} ${isAm ? 'AM' : 'PM'}`;
 	};
 	const [activeTabKey, setActiveTabKey] = useState<number>(0);
-
-	// PatternFly Select open state for Approval Status
-	const [approvalStatusOpen, setApprovalStatusOpen] = useState<boolean>(false);
 	
 	const onTabSelect = (_event: any, tabIndex: number | string) => {
 			setActiveTabKey(Number(tabIndex));
 	};
-
 	return (
 		<div className={'pf-v5-c-form'}>
 			<Card>
@@ -1087,23 +1080,15 @@ const Form__RiskRegisterProcess_MakerSubmitRR: React.FC<any> = (props: any) => {
 						fieldId={'uniforms-0002-0005'}
 						label={'Status'}
 						isRequired={false}>
-						<Select
+						<TextInput
+							name={'approval.status'}
 							id={'uniforms-0002-0005'}
-							variant={SelectVariant.single}
-							isOpen={approvalStatusOpen}
-							onToggle={(open) => setApprovalStatusOpen(open)}
-							onSelect={(_e, selection) => {
-								set__approval__status(selection as string);
-								setApprovalStatusOpen(false);
-							}}
-							selections={approval__status ?? ''}
-							aria-label={'Approval status select'}>
-							<SelectOption value={''}>Select an option</SelectOption>
-							<SelectOption value={'APPROVE'}>APPROVE</SelectOption>
-							<SelectOption value={'REJECT'}>REJECT</SelectOption>
-						</Select>
-	
-  
+							isDisabled={false}
+							placeholder={''}
+							type={'text'}
+							value={approval__status}
+							onChange={(e, newValue) => set__approval__status(newValue)}
+						/>
 					</FormGroup>
 					<FormGroup
 						fieldId={'uniforms-0002-0006'}
@@ -1118,7 +1103,6 @@ const Form__RiskRegisterProcess_MakerSubmitRR: React.FC<any> = (props: any) => {
 							value={approval__userId}
 							onChange={(e, newValue) => set__approval__userId(newValue)}
 						/>
-
 					</FormGroup>
 				</CardBody>
 			</Card>
