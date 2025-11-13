@@ -27,7 +27,7 @@ public class SourceFilesProviderProducer {
     private static final SourceFilesProviderImpl INSTANCE = new SourceFilesProviderImpl();
 
     static {
-        INSTANCE.addSourceFile("RiskRegisterProcess", new SourceFile("RR.bpmn"));
+        INSTANCE.addSourceFile("RiskRegisterProcess", new SourceFile("RIskRegisterProcess.bpmn"));
     }
 
     @jakarta.enterprise.inject.Produces()
