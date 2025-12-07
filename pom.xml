@@ -11,6 +11,9 @@
 
   <properties>
 
+ 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
     <!-- Versions -->
     <version.maven-compiler-plugin>3.13.0</version.maven-compiler-plugin>
     <version.maven-surefire-plugin>3.3.1</version.maven-surefire-plugin>
@@ -161,6 +164,10 @@
           <artifactId>quarkus-jdbc-h2</artifactId>
         </dependency>
         <dependency>
+          <groupId>io.quarkus</groupId>
+          <artifactId>quarkus-jdbc-postgresql</artifactId>
+        </dependency>
+       <dependency>
           <groupId>org.kie</groupId>
           <artifactId>kie-addons-quarkus-persistence-jdbc</artifactId>
         </dependency>
